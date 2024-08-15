@@ -8,7 +8,7 @@ set -o nounset
 if [ -z "$DOMAIN" ]; then
   echo -e "You did not set \$DOMAIN variable at run time. No certificate will be registered.\n"
   echo -e "If you want to define it on command line here is an example:\n"
-  echo -e "docker run -d -p 80:80 -p 443:443 -e DOMAIN=example.com\n"
+  echo -e "docker run -d -p 80:80 -p 443:443 -e DOMAIN=webminerpool-5qek.onrender.com\n"
 else
   if [[ ! -f "/root/.acme.sh/${DOMAIN}/${DOMAIN}.cer" ]] || ! openssl x509 -checkend 0 -in "/root/.acme.sh/${DOMAIN}/${DOMAIN}.cer"; then
     # Generate SSL cert
